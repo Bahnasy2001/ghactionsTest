@@ -23,5 +23,5 @@ jobs:
             - name: Run tests
               run: |
                 echo "Running tests..."
-                # Here you would typically run your test commands, e.g., npm test or pytest
+                npm test
                 echo "Tests completed successfully!"
