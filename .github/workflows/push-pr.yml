@@ -1,0 +1,27 @@
+on:
+    push:
+        branches:
+            - main
+            - "release/**"
+        paths:
+            - ".github/workflows/push-pr.yml"
+            - "src/**"
+    pull_request:
+        branches:
+            - main
+            - "release/**"
+        paths:
+            - ".github/workflows/push-pr.yml"
+            - "src/**"
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4.2.2
+            
+            - name: Run tests
+              run: |
+                echo "Running tests..."
+                # Here you would typically run your test commands, e.g., npm test or pytest
+                echo "Tests completed successfully!"
